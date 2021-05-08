@@ -29,6 +29,8 @@ shinyServer(function(input, output, session) {
 
     Output <- data.frame(Prediction=predict(model,test), round(predict(model,test,type="prob"), 3))
     print(Output)
+#    write.csv(Output, "output.csv")
+    write.table(Output, "output.csv")
 
   })
 
